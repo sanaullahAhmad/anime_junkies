@@ -1,0 +1,1014 @@
+<html lang="en" ng-app="kp_clothes" data-ng-controller="mainController as mc" class="ng-scope"><head ng-init="page_title = 'Anime Junkes'"><style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\:form{display:block;}.ng-animate-shim{visibility:hidden;}.ng-anchor{position:absolute;}</style>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title ng-bind="page_title" class="ng-binding">Anime Junkes</title>
+
+    <!-- Bootstrap -->
+    <link href="/anime_junkies/assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/anime_junkies/assets/css/bootflat.min.css" rel="stylesheet">
+    <link href="/anime_junkies/assets/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/anime_junkies/assets/plugins/owl-carousel/owl.carousel.css">
+    <link rel="stylesheet" href="/anime_junkies/assets/plugins/owl-carousel/owl.theme.css">
+    <link href="/anime_junkies/assets/css/custom.css" rel="stylesheet">
+    <link rel="stylesheet" media="screen and (min-width: 120px) and (max-width: 319px)" href="/anime_junkies/assets/css/mobile.css">
+    <link rel="stylesheet" media="screen and (min-width: 320px) and (max-width: 480px)" href="/anime_junkies/assets/css/smart-phones.css">
+    <link rel="stylesheet" media="screen and (min-width: 481px) and (max-width: 640px)" href="/anime_junkies/assets/css/tablets.css">
+    <link rel="stylesheet" media="screen and (min-width: 641px) and (max-width: 960px)" href="/anime_junkies/assets/css/iPad.css">
+    <link rel="stylesheet" media="screen and (min-width: 961px) and (max-width: 1024px)" href="/anime_junkies/assets/css/960res.css">
+    <link rel="stylesheet" media="screen and (min-width: 1025px) and (max-width: 1280px)" href="/anime_junkies/assets/css/1024res.css">
+    <link rel="stylesheet" media="screen and (max-width: 1281px)" href="/anime_junkies/assets/css/1280res.css">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]--><script src="http://localhost/anime_junkies/assets/js/angular/frontend/controllers/videoController.js" async=""></script>
+</head><body cz-shortcut-listen="true">
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header col-sm-2 col-md-2 col-lg-2">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <span class="navbar-brand ">
+                <a href="#" class="menu-toggle hidden-xs hidden-sm">
+                        <span class="fa fa-bars"></span>
+                </a>
+
+                <a href="#/" class="logo"> <img class="svg" src="/anime_junkies/assets/img/logo_animejunkies.JPG"></a>
+            </span>
+
+
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <form class="navbar-form navbar-left ng-pristine ng-valid" role="search" ng-submit="$parent.search_videos(keywords)">
+                <div class="form-group">
+                    <input type="text" class="form-control input-search ng-pristine ng-untouched ng-valid ng-empty" placeholder="Suchbegriff eingeben" name="search" ng-model="keywords">
+                </div>
+            </form>
+
+
+            <ul class="nav navbar-nav">
+                <!-- ngRepeat: category in categories --><li ng-repeat="category in categories" class="ng-scope">
+                <a href="#/category/anime-filme" ng-bind="category.title" class="ng-binding">Anime Filme</a>
+            </li><!-- end ngRepeat: category in categories --><li ng-repeat="category in categories" class="ng-scope">
+                <a href="#/category/anime-series" ng-bind="category.title" class="ng-binding">Anime Series</a>
+            </li><!-- end ngRepeat: category in categories -->
+                <!-- ngRepeat: category in categories --><li ng-repeat="category in categories" class="ng-scope">
+                <a href="#/categoryhot/anime-filme/hot">Hot <span ng-bind="category.title" class="ng-binding">Anime Filme</span></a>
+            </li><!-- end ngRepeat: category in categories --><li ng-repeat="category in categories" class="ng-scope">
+                <a href="#/categoryhot/anime-series/hot">Hot <span ng-bind="category.title" class="ng-binding">Anime Series</span></a>
+            </li><!-- end ngRepeat: category in categories -->
+                <!--<li><a href="subcategory.html">ANIME SERIEN</a></li>
+                <li><a href="subcategory.html">HOT FILME</a></li>
+                <li><a href="subcategory.html">HOT HOT SERIEN</a></li>-->
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="http://localhost/anime_junkies/home/do_logout" class="dropdown-toggle"><i class="fa fa-user"></i> Logout</a>
+                </li><li>
+            </li><li><a href="#/settings"><i class="fa fa-lock"></i>Settings</a></li>
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+</nav><div class="container-fluid main">
+    <div class="row">
+        <div class="col-sm-2 col-md-2 col-xs-1 hide-ipad hidden-xs sidebar">
+            <ul class="list-unstyled">
+                <li>
+                    <a href="#/category" class="text-muted">
+                        <i class="fa fa-home"></i> START
+                    </a>
+                </li>
+                <li class="divider">
+                    <a href="#/video" class="text-muted">
+                        <!--<img class="icon" src="img/line-graphic-arrow.svg" alt=""> ANIME TREND-->
+                        <i class="icon-arrow-graph-up-gray"></i> ANIME TREND
+                    </a>
+                </li>
+                <!-- ngRepeat: (key,category) in categories --><li ng-class="{'divider':(key+1)==categories.length}" ng-repeat="(key,category) in categories" class="ng-scope">
+                <a href="#/category/anime-filme" class="text-muted ng-binding">
+                    <!-- ngIf: category.css_icon!=null && category.css_icon.length>0 --><i class="fa fa-film" ng-if="category.css_icon!=null &amp;&amp; category.css_icon.length>0"></i><!-- end ngIf: category.css_icon!=null && category.css_icon.length>0 -->
+                    Anime Filme
+                </a>
+            </li><!-- end ngRepeat: (key,category) in categories --><li ng-class="{'divider':(key+1)==categories.length}" ng-repeat="(key,category) in categories" class="ng-scope divider">
+                <a href="#/category/anime-series" class="text-muted ng-binding">
+                    <!-- ngIf: category.css_icon!=null && category.css_icon.length>0 --><i class="icon-fontello-video" ng-if="category.css_icon!=null &amp;&amp; category.css_icon.length>0"></i><!-- end ngIf: category.css_icon!=null && category.css_icon.length>0 -->
+                    Anime Series
+                </a>
+            </li><!-- end ngRepeat: (key,category) in categories -->
+                <!--<li class="divider">
+                        <a href="#" class="text-muted">
+                                <i class="icon-fontello-video"></i> ANIME SERIEN
+                        </a>
+                </li>-->
+                <li>
+                    <a href="#/meinevideos" class="text-muted">
+                        <i class="fa fa-play-circle-o"></i> MEINE VIDEOS
+                    </a>
+                </li>
+                <li>
+                    <a href="#/uploadvideos" class="text-muted">
+                        <i class="fa fa-upload"></i> ANIME UPLOAD
+                    </a>
+                </li>
+            </ul>
+        </div>            <!-- uiView: main --><div ui-view="main" class="ng-scope"><div class="col-sm-12 content-parent col-md-8 col-xs-12 ng-scope">
+        <div class="content detail-page">
+            <div class="top-banner top-space50">
+
+            </div>
+            <div class="item video-name-lg">
+                <div class="row">
+                    <div class="col-md-6 col-sm-6">
+                        <h4 class="title lead top-space50 ng-binding"><i class="fa fa-envelope-o text-danger"></i> kunar</h4>
+                    </div>
+                    <div class="col-md-6 col-sm-6 overlay-toggle">
+                                    <span class="pull-right top-space50">
+                                        <label class="toggle">
+                                                <input type="checkbox">
+                                                <span class="handle"></span>
+                                        </label>
+                                        <strong class="toggle-label"> Kino-Modus einschalten</strong>
+                                    </span>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+        <div class="col-sm-12 col-md-12 col-xs-12 detail-video-play ng-scope">
+            <div class="row">
+                <div class="col-md-3 col-sm-2 right btn-prev">
+                    <a href="#"><i class="glyphicon glyphicon-chevron-left"></i> </a>
+                </div>
+                <div class="col-md-6 col-sm-8 video-parent">
+                    <div class="video">
+
+                        <div class="videoWrapper" style="position: relative; padding-bottom: 56.25%; /* 16:9 */ padding-top: 25px; height: 0;">
+                            <!--<iframe aria-controls="true"  scrolling="NO" frameborder="0" style="overflow:hidden;border: 0px;position: absolute;top: 0;left: 0;width: 100%;height: 100%;" webkitallowfullscreen mozallowfullscreen allowfullscreen
+                                             src="https://www.youtube.com/embed/XGSy3_Czz8k">
+                            </iframe>-->
+
+                            <video width="660" height="396" controls="" style="overflow:hidden;border: 0px;position: absolute;top: 0;left: 0;">
+                                <source type="video/mp4" src="uploads/uploaded_videos/kunar_ttp_Afghan_taliban.mp4">
+
+                                <source src="demo.ogg" type="video/ogg">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-2 left btn-next text-right">
+                    <a href="#"><i class="glyphicon glyphicon-chevron-right"></i> </a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-offset-2 col-sm-12 col-md-8 col-xs-12 content-parent ng-scope">
+            <div class="content2  detail-page">
+                <div class="item top-space">
+                    <div class="panel">
+                        <ul class="nav nav-tabs" id="myTab1">
+                            <li class="active"><a data-toggle="tab" href="#home1"><i class="fa fa-share-alt text-danger"></i> Teilen</a></li>
+                            <li class=""><a data-toggle="tab" href="#profile1">Profile</a></li>
+                            <li class="dropdown">
+                                <a data-toggle="dropdown" class="dropdown-toggle" id="myTabDrop1-1" href="#">Dropdown <b class="caret"></b></a>
+                                <ul aria-labelledby="myTabDrop1" role="menu" class="dropdown-menu">
+                                    <li><a data-toggle="tab" tabindex="-1" href="#dropdown1-1">@fat</a></li>
+                                    <li><a data-toggle="tab" tabindex="-1" href="#dropdown1-2">@mdo</a></li>
+                                </ul>
+                            </li>
+                            <li class="pull-right"><a data-toggle="tab" href="#profile1">Profile</a></li>
+                        </ul>
+                        <div class="tab-content" id="myTabContent">
+                            <div id="home1" class="tab-pane fade active in">
+                                <p>Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica.</p>
+                            </div>
+                            <div id="profile1" class="tab-pane fade">
+                                <p>Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid. Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan four loko farm-to-table craft beer twee.  </p>
+                            </div>
+                            <div id="dropdown1-1" class="tab-pane fade">
+                                <p>Etsy mixtape wayfarers, ethical wes anderson tofu before they sold out mcsweeney's organic lomo retro fanny pack lo-fi farm-to-table readymade. Messenger bag gentrify pitchfork tattooed craft beer, iphone...</p>
+                            </div>
+                            <div id="dropdown1-2" class="tab-pane fade">
+                                <p>Trust fund seitan letterpress, keytar raw denim keffiyeh etsy art party before they sold out master cleanse gluten-free squid scenester freegan cosby sweater. Fanny pack portland seitan DIY, art party locavore wolf cliche ... </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white">
+                    <div class="item">
+                        <p class="title"><i class="fa fa-play text-danger"></i> About this video</p>
+                        <p class="ng-binding">
+                            <strong class="text-danger"></strong>kunar
+                        </p>
+                    </div>
+                    <hr width="100%">
+
+                    <div class="item">
+                        <div class="row">
+                            <div class="col-sm-2 col-md-2 theme">
+                                <div class="selecter  closed" tabindex="0"><select data-selecter="" name="selecter_basic" class="selecter_1 selecter-element" tabindex="-1">
+                                    <optgroup label="Group One">
+                                        <option value="1">One</option>
+                                        <option value="2">Two</option>
+                                        <option value="3">Three</option>
+                                    </optgroup>
+                                    <optgroup label="Group One">
+                                        <option value="4">Four</option>
+                                        <option value="5">Five</option>
+                                        <option value="6">Six</option>
+                                        <option value="7">Seven</option>
+                                    </optgroup>
+                                    <optgroup label="Group Three">
+                                        <option value="8">Eight</option>
+                                        <option value="9">Nine</option>
+                                        <option value="10">Ten</option>
+                                    </optgroup>
+                                </select><span class="selecter-selected">One</span><div class="selecter-options"><span class="selecter-group">Group One</span><span class="selecter-item selected" data-value="1">One</span><span class="selecter-item" data-value="2">Two</span><span class="selecter-item" data-value="3">Three</span><span class="selecter-group">Group One</span><span class="selecter-item" data-value="4">Four</span><span class="selecter-item" data-value="5">Five</span><span class="selecter-item" data-value="6">Six</span><span class="selecter-item" data-value="7">Seven</span><span class="selecter-group">Group Three</span><span class="selecter-item" data-value="8">Eight</span><span class="selecter-item" data-value="9">Nine</span><span class="selecter-item" data-value="10">Ten</span></div></div>
+                            </div>
+                            <div class="col-sm-8 col-md-8 text-muted text-right phone-text-left top-space5">
+                                <strong class="top-space5">Sortieren nach</strong>
+                            </div>
+                            <div class="col-sm-2 col-md-2">
+                                <div class="selecter  closed" tabindex="0"><select data-selecter="" name="selecter_basic" class="selecter_1 selecter-element" tabindex="-1">
+                                    <optgroup label="Group One">
+                                        <option value="1">One</option>
+                                        <option value="2">Two</option>
+                                        <option value="3">Three</option>
+                                    </optgroup>
+                                    <optgroup label="Group One">
+                                        <option value="4">Four</option>
+                                        <option value="5">Five</option>
+                                        <option value="6">Six</option>
+                                        <option value="7">Seven</option>
+                                    </optgroup>
+                                    <optgroup label="Group Three">
+                                        <option value="8">Eight</option>
+                                        <option value="9">Nine</option>
+                                        <option value="10">Ten</option>
+                                    </optgroup>
+                                </select><span class="selecter-selected">One</span><div class="selecter-options"><span class="selecter-group">Group One</span><span class="selecter-item selected" data-value="1">One</span><span class="selecter-item" data-value="2">Two</span><span class="selecter-item" data-value="3">Three</span><span class="selecter-group">Group One</span><span class="selecter-item" data-value="4">Four</span><span class="selecter-item" data-value="5">Five</span><span class="selecter-item" data-value="6">Six</span><span class="selecter-item" data-value="7">Seven</span><span class="selecter-group">Group Three</span><span class="selecter-item" data-value="8">Eight</span><span class="selecter-item" data-value="9">Nine</span><span class="selecter-item" data-value="10">Ten</span></div></div>
+                            </div>
+                        </div>
+                        <div class="row top-space subcategory ">
+                            <div class="col-md-12 videos">
+                                <div class="col-sm-3 col-md-2 zoom-it bottom-space">
+                                    <a class="video-play" href="video-detail.html">
+                                        <p class="img">
+                                            <img src="/anime_junkies/assets/images/cartoon2.png" class="img-responsive" alt="">
+                                            <span class="icon-play"><i class="fa fa-3x fa-play-circle-o"></i> </span>
+                                            <span class="time"><i class="fa fa-clock-o"></i> 30:20 </span>
+                                            <span class="pull-right views"><i class="fa fa-eye"></i> 1223 views </span>
+                                        </p>
+                                        <p class="text">Some text</p>
+                                    </a>
+                                </div>
+                                <div class="col-sm-3 col-md-2 zoom-it bottom-space">
+                                    <a class="video-play hover-text" href="video-detail.html">
+                                        <p class="img">
+                                            <img src="/anime_junkies/assets/images/cartoon2.png" class="img-responsive" alt="">
+                                            <span class="icon-play"><i class="fa fa-3x fa-play-circle-o"></i> </span>
+                                            <span class="time"><i class="fa fa-clock-o"></i> 30:20 </span>
+                                            <span class="pull-right views"><i class="fa fa-eye"></i> 1223 views </span>
+                                        </p>
+                                        <p class="text">Some text</p>
+                                    </a>
+                                </div>
+                                <div class="col-sm-3 col-md-2 zoom-it bottom-space">
+                                    <a class="video-play" href="video-detail.html">
+                                        <p class="img">
+                                            <img src="/anime_junkies/assets/images/cartoon2.png" class="img-responsive" alt="">
+                                            <span class="icon-play"><i class="fa fa-3x fa-play-circle-o"></i> </span>
+                                            <span class="time"><i class="fa fa-clock-o"></i> 30:20 </span>
+                                            <span class="pull-right views"><i class="fa fa-eye"></i> 1223 views </span>
+                                        </p>
+                                        <p class="text">Some text</p>
+                                    </a>
+                                </div>
+                                <div class="col-sm-3 col-md-2 zoom-it bottom-space">
+                                    <a class="video-play" href="video-detail.html">
+                                        <p class="img">
+                                            <img src="/anime_junkies/assets/images/cartoon2.png" class="img-responsive" alt="">
+                                            <span class="icon-play"><i class="fa fa-3x fa-play-circle-o"></i> </span>
+                                            <span class="time"><i class="fa fa-clock-o"></i> 30:20 </span>
+                                            <span class="pull-right views"><i class="fa fa-eye"></i> 1223 views </span>
+                                        </p>
+                                        <p class="text">Some text</p>
+                                    </a>
+                                </div>
+                                <div class="col-sm-3 col-md-2 zoom-it bottom-space">
+                                    <a class="video-play hover-text" href="video-detail.html">
+                                        <p class="img">
+                                            <img src="/anime_junkies/assets/images/cartoon2.png" class="img-responsive" alt="">
+                                            <span class="icon-play"><i class="fa fa-3x fa-play-circle-o"></i> </span>
+                                            <span class="time"><i class="fa fa-clock-o"></i> 30:20 </span>
+                                            <span class="pull-right views"><i class="fa fa-eye"></i> 1223 views </span>
+                                        </p>
+                                        <p class="text">Some text</p>
+                                    </a>
+                                </div>
+                                <div class="col-sm-3 col-md-2 zoom-it bottom-space">
+                                    <a class="video-play" href="video-detail.html">
+                                        <p class="img">
+                                            <img src="/anime_junkies/assets/images/cartoon2.png" class="img-responsive" alt="">
+                                            <span class="icon-play"><i class="fa fa-3x fa-play-circle-o"></i> </span>
+                                            <span class="time"><i class="fa fa-clock-o"></i> 30:20 </span>
+                                            <span class="pull-right views"><i class="fa fa-eye"></i> 1223 views </span>
+                                        </p>
+                                        <p class="text">Some text</p>
+                                    </a>
+                                </div>
+                                <div class="col-sm-3 col-md-2 zoom-it bottom-space">
+                                    <a class="video-play" href="video-detail.html">
+                                        <p class="img">
+                                            <img src="/anime_junkies/assets/images/cartoon2.png" class="img-responsive" alt="">
+                                            <span class="icon-play"><i class="fa fa-3x fa-play-circle-o"></i> </span>
+                                            <span class="time"><i class="fa fa-clock-o"></i> 30:20 </span>
+                                            <span class="pull-right views"><i class="fa fa-eye"></i> 1223 views </span>
+                                        </p>
+                                        <p class="text">Some text</p>
+                                    </a>
+                                </div>
+                                <div class="col-sm-3 col-md-2 zoom-it bottom-space">
+                                    <a class="video-play hover-text" href="video-detail.html">
+                                        <p class="img">
+                                            <img src="/anime_junkies/assets/images/cartoon2.png" class="img-responsive" alt="">
+                                            <span class="icon-play"><i class="fa fa-3x fa-play-circle-o"></i> </span>
+                                            <span class="time"><i class="fa fa-clock-o"></i> 30:20 </span>
+                                            <span class="pull-right views"><i class="fa fa-eye"></i> 1223 views </span>
+                                        </p>
+                                        <p class="text">Some text</p>
+                                    </a>
+                                </div>
+                                <div class="col-sm-3 col-md-2 zoom-it bottom-space">
+                                    <a class="video-play" href="video-detail.html">
+                                        <p class="img">
+                                            <img src="/anime_junkies/assets/images/cartoon2.png" class="img-responsive" alt="">
+                                            <span class="icon-play"><i class="fa fa-3x fa-play-circle-o"></i> </span>
+                                            <span class="time"><i class="fa fa-clock-o"></i> 30:20 </span>
+                                            <span class="pull-right views"><i class="fa fa-eye"></i> 1223 views </span>
+                                        </p>
+                                        <p class="text">Some text</p>
+                                    </a>
+                                </div>
+                                <div class="col-sm-3 col-md-2 zoom-it bottom-space">
+                                    <a class="video-play" href="video-detail.html">
+                                        <p class="img">
+                                            <img src="/anime_junkies/assets/images/cartoon2.png" class="img-responsive" alt="">
+                                            <span class="icon-play"><i class="fa fa-3x fa-play-circle-o"></i> </span>
+                                            <span class="time"><i class="fa fa-clock-o"></i> 30:20 </span>
+                                            <span class="pull-right views"><i class="fa fa-eye"></i> 1223 views </span>
+                                        </p>
+                                        <p class="text">Some text</p>
+                                    </a>
+                                </div>
+                                <div class="col-sm-3 col-md-2 zoom-it bottom-space">
+                                    <a class="video-play hover-text" href="video-detail.html">
+                                        <p class="img">
+                                            <img src="/anime_junkies/assets/images/cartoon2.png" class="img-responsive" alt="">
+                                            <span class="icon-play"><i class="fa fa-3x fa-play-circle-o"></i> </span>
+                                            <span class="time"><i class="fa fa-clock-o"></i> 30:20 </span>
+                                            <span class="pull-right views"><i class="fa fa-eye"></i> 1223 views </span>
+                                        </p>
+                                        <p class="text">Some text</p>
+                                    </a>
+                                </div>
+                                <div class="col-sm-3 col-md-2 zoom-it bottom-space">
+                                    <a class="video-play" href="video-detail.html">
+                                        <p class="img">
+                                            <img src="/anime_junkies/assets/images/cartoon2.png" class="img-responsive" alt="">
+                                            <span class="icon-play"><i class="fa fa-3x fa-play-circle-o"></i> </span>
+                                            <span class="time"><i class="fa fa-clock-o"></i> 30:20 </span>
+                                            <span class="pull-right views"><i class="fa fa-eye"></i> 1223 views </span>
+                                        </p>
+                                        <p class="text">Some text</p>
+                                    </a>
+                                </div>
+                                <div class="col-sm-3 col-md-2 zoom-it bottom-space">
+                                    <a class="video-play" href="video-detail.html">
+                                        <p class="img">
+                                            <img src="/anime_junkies/assets/images/cartoon2.png" class="img-responsive" alt="">
+                                            <span class="icon-play"><i class="fa fa-3x fa-play-circle-o"></i> </span>
+                                            <span class="time"><i class="fa fa-clock-o"></i> 30:20 </span>
+                                            <span class="pull-right views"><i class="fa fa-eye"></i> 1223 views </span>
+                                        </p>
+                                        <p class="text">Some text</p>
+                                    </a>
+                                </div>
+                                <div class="col-sm-3 col-md-2 zoom-it bottom-space">
+                                    <a class="video-play hover-text" href="video-detail.html">
+                                        <p class="img">
+                                            <img src="/anime_junkies/assets/images/cartoon2.png" class="img-responsive" alt="">
+                                            <span class="icon-play"><i class="fa fa-3x fa-play-circle-o"></i> </span>
+                                            <span class="time"><i class="fa fa-clock-o"></i> 30:20 </span>
+                                            <span class="pull-right views"><i class="fa fa-eye"></i> 1223 views </span>
+                                        </p>
+                                        <p class="text">Some text</p>
+                                    </a>
+                                </div>
+                                <div class="col-sm-3 col-md-2 zoom-it bottom-space">
+                                    <a class="video-play" href="video-detail.html">
+                                        <p class="img">
+                                            <img src="/anime_junkies/assets/images/cartoon2.png" class="img-responsive" alt="">
+                                            <span class="icon-play"><i class="fa fa-3x fa-play-circle-o"></i> </span>
+                                            <span class="time"><i class="fa fa-clock-o"></i> 30:20 </span>
+                                            <span class="pull-right views"><i class="fa fa-eye"></i> 1223 views </span>
+                                        </p>
+                                        <p class="text">Some text</p>
+                                    </a>
+                                </div>
+                                <div class="col-sm-3 col-md-2 zoom-it bottom-space">
+                                    <a class="video-play" href="video-detail.html">
+                                        <p class="img">
+                                            <img src="/anime_junkies/assets/images/cartoon2.png" class="img-responsive" alt="">
+                                            <span class="icon-play"><i class="fa fa-3x fa-play-circle-o"></i> </span>
+                                            <span class="time"><i class="fa fa-clock-o"></i> 30:20 </span>
+                                            <span class="pull-right views"><i class="fa fa-eye"></i> 1223 views </span>
+                                        </p>
+                                        <p class="text">Some text</p>
+                                    </a>
+                                </div>
+                                <div class="col-sm-3 col-md-2 zoom-it bottom-space">
+                                    <a class="video-play hover-text" href="video-detail.html">
+                                        <p class="img">
+                                            <img src="/anime_junkies/assets/images/cartoon2.png" class="img-responsive" alt="">
+                                            <span class="icon-play"><i class="fa fa-3x fa-play-circle-o"></i> </span>
+                                            <span class="time"><i class="fa fa-clock-o"></i> 30:20 </span>
+                                            <span class="pull-right views"><i class="fa fa-eye"></i> 1223 views </span>
+                                        </p>
+                                        <p class="text">Some text</p>
+                                    </a>
+                                </div>
+                                <div class="col-sm-3 col-md-2 zoom-it bottom-space">
+                                    <a class="video-play" href="video-detail.html">
+                                        <p class="img">
+                                            <img src="/anime_junkies/assets/images/cartoon2.png" class="img-responsive" alt="">
+                                            <span class="icon-play"><i class="fa fa-3x fa-play-circle-o"></i> </span>
+                                            <span class="time"><i class="fa fa-clock-o"></i> 30:20 </span>
+                                            <span class="pull-right views"><i class="fa fa-eye"></i> 1223 views </span>
+                                        </p>
+                                        <p class="text">Some text</p>
+                                    </a>
+                                </div>
+                                <div class="col-sm-3 col-md-2 zoom-it bottom-space">
+                                    <a class="video-play" href="video-detail.html">
+                                        <p class="img">
+                                            <img src="/anime_junkies/assets/images/cartoon2.png" class="img-responsive" alt="">
+                                            <span class="icon-play"><i class="fa fa-3x fa-play-circle-o"></i> </span>
+                                            <span class="time"><i class="fa fa-clock-o"></i> 30:20 </span>
+                                            <span class="pull-right views"><i class="fa fa-eye"></i> 1223 views </span>
+                                        </p>
+                                        <p class="text">Some text</p>
+                                    </a>
+                                </div>
+                                <div class="col-sm-3 col-md-2 zoom-it bottom-space">
+                                    <a class="video-play hover-text" href="video-detail.html">
+                                        <p class="img">
+                                            <img src="/anime_junkies/assets/images/cartoon2.png" class="img-responsive" alt="">
+                                            <span class="icon-play"><i class="fa fa-3x fa-play-circle-o"></i> </span>
+                                            <span class="time"><i class="fa fa-clock-o"></i> 30:20 </span>
+                                            <span class="pull-right views"><i class="fa fa-eye"></i> 1223 views </span>
+                                        </p>
+                                        <p class="text">Some text</p>
+                                    </a>
+                                </div>
+                                <div class="col-sm-3 col-md-2 zoom-it bottom-space">
+                                    <a class="video-play" href="video-detail.html">
+                                        <p class="img">
+                                            <img src="/anime_junkies/assets/images/cartoon2.png" class="img-responsive" alt="">
+                                            <span class="icon-play"><i class="fa fa-3x fa-play-circle-o"></i> </span>
+                                            <span class="time"><i class="fa fa-clock-o"></i> 30:20 </span>
+                                            <span class="pull-right views"><i class="fa fa-eye"></i> 1223 views </span>
+                                        </p>
+                                        <p class="text">Some text</p>
+                                    </a>
+                                </div>
+                                <div class="col-sm-3 col-md-2 zoom-it bottom-space">
+                                    <a class="video-play" href="video-detail.html">
+                                        <p class="img">
+                                            <img src="/anime_junkies/assets/images/cartoon2.png" class="img-responsive" alt="">
+                                            <span class="icon-play"><i class="fa fa-3x fa-play-circle-o"></i> </span>
+                                            <span class="time"><i class="fa fa-clock-o"></i> 30:20 </span>
+                                            <span class="pull-right views"><i class="fa fa-eye"></i> 1223 views </span>
+                                        </p>
+                                        <p class="text">Some text</p>
+                                    </a>
+                                </div>
+                                <div class="col-sm-3 col-md-2 zoom-it bottom-space">
+                                    <a class="video-play hover-text" href="video-detail.html">
+                                        <p class="img">
+                                            <img src="/anime_junkies/assets/images/cartoon2.png" class="img-responsive" alt="">
+                                            <span class="icon-play"><i class="fa fa-3x fa-play-circle-o"></i> </span>
+                                            <span class="time"><i class="fa fa-clock-o"></i> 30:20 </span>
+                                            <span class="pull-right views"><i class="fa fa-eye"></i> 1223 views </span>
+                                        </p>
+                                        <p class="text">Some text</p>
+                                    </a>
+                                </div>
+                                <div class="col-sm-3 col-md-2 zoom-it bottom-space">
+                                    <a class="video-play" href="video-detail.html">
+                                        <p class="img">
+                                            <img src="/anime_junkies/assets/images/cartoon2.png" class="img-responsive" alt="">
+                                            <span class="icon-play"><i class="fa fa-3x fa-play-circle-o"></i> </span>
+                                            <span class="time"><i class="fa fa-clock-o"></i> 30:20 </span>
+                                            <span class="pull-right views"><i class="fa fa-eye"></i> 1223 views </span>
+                                        </p>
+                                        <p class="text">Some text</p>
+                                    </a>
+                                </div>
+                                <div class="col-sm-3 col-md-2 zoom-it bottom-space">
+                                    <a class="video-play" href="video-detail.html">
+                                        <p class="img">
+                                            <img src="/anime_junkies/assets/images/cartoon2.png" class="img-responsive" alt="">
+                                            <span class="icon-play"><i class="fa fa-3x fa-play-circle-o"></i> </span>
+                                            <span class="time"><i class="fa fa-clock-o"></i> 30:20 </span>
+                                            <span class="pull-right views"><i class="fa fa-eye"></i> 1223 views </span>
+                                        </p>
+                                        <p class="text">Some text</p>
+                                    </a>
+                                </div><div class="col-sm-3 col-md-2 zoom-it bottom-space">
+                                <a class="video-play hover-text" href="video-detail.html">
+                                    <p class="img">
+                                        <img src="/anime_junkies/assets/images/cartoon2.png" class="img-responsive" alt="">
+                                        <span class="icon-play"><i class="fa fa-3x fa-play-circle-o"></i> </span>
+                                        <span class="time"><i class="fa fa-clock-o"></i> 30:20 </span>
+                                        <span class="pull-right views"><i class="fa fa-eye"></i> 1223 views </span>
+                                    </p>
+                                    <p class="text">Some text</p>
+                                </a>
+                            </div>
+                                <div class="col-sm-3 col-md-2 zoom-it bottom-space">
+                                    <a class="video-play" href="video-detail.html">
+                                        <p class="img">
+                                            <img src="/anime_junkies/assets/images/cartoon2.png" class="img-responsive" alt="">
+                                            <span class="icon-play"><i class="fa fa-3x fa-play-circle-o"></i> </span>
+                                            <span class="time"><i class="fa fa-clock-o"></i> 30:20 </span>
+                                            <span class="pull-right views"><i class="fa fa-eye"></i> 1223 views </span>
+                                        </p>
+                                        <p class="text">Some text</p>
+                                    </a>
+                                </div>
+                                <div class="col-sm-3 col-md-2 zoom-it bottom-space">
+                                    <a class="video-play" href="video-detail.html">
+                                        <p class="img">
+                                            <img src="/anime_junkies/assets/images/cartoon2.png" class="img-responsive" alt="">
+                                            <span class="icon-play"><i class="fa fa-3x fa-play-circle-o"></i> </span>
+                                            <span class="time"><i class="fa fa-clock-o"></i> 30:20 </span>
+                                            <span class="pull-right views"><i class="fa fa-eye"></i> 1223 views </span>
+                                        </p>
+                                        <p class="text">Some text</p>
+                                    </a>
+                                </div>
+                                <div class="col-sm-3 col-md-2 zoom-it bottom-space">
+                                    <a class="video-play hover-text" href="video-detail.html">
+                                        <p class="img">
+                                            <img src="/anime_junkies/assets/images/cartoon2.png" class="img-responsive" alt="">
+                                            <span class="icon-play"><i class="fa fa-3x fa-play-circle-o"></i> </span>
+                                            <span class="time"><i class="fa fa-clock-o"></i> 30:20 </span>
+                                            <span class="pull-right views"><i class="fa fa-eye"></i> 1223 views </span>
+                                        </p>
+                                        <p class="text">Some text</p>
+                                    </a>
+                                </div>
+                                <div class="col-sm-3 col-md-2 zoom-it bottom-space">
+                                    <a class="video-play" href="video-detail.html">
+                                        <p class="img">
+                                            <img src="/anime_junkies/assets/images/cartoon2.png" class="img-responsive" alt="">
+                                            <span class="icon-play"><i class="fa fa-3x fa-play-circle-o"></i> </span>
+                                            <span class="time"><i class="fa fa-clock-o"></i> 30:20 </span>
+                                            <span class="pull-right views"><i class="fa fa-eye"></i> 1223 views </span>
+                                        </p>
+                                        <p class="text">Some text</p>
+                                    </a>
+                                </div>
+                                <div class="col-sm-3 col-md-2 zoom-it bottom-space">
+                                    <a class="video-play" href="video-detail.html">
+                                        <p class="img">
+                                            <img src="/anime_junkies/assets/images/cartoon2.png" class="img-responsive" alt="">
+                                            <span class="icon-play"><i class="fa fa-3x fa-play-circle-o"></i> </span>
+                                            <span class="time"><i class="fa fa-clock-o"></i> 30:20 </span>
+                                            <span class="pull-right views"><i class="fa fa-eye"></i> 1223 views </span>
+                                        </p>
+                                        <p class="text">Some text</p>
+                                    </a>
+                                </div>
+                                <div class="col-sm-3 col-md-2 zoom-it bottom-space">
+                                    <a class="video-play hover-text" href="video-detail.html">
+                                        <p class="img">
+                                            <img src="/anime_junkies/assets/images/cartoon2.png" class="img-responsive" alt="">
+                                            <span class="icon-play"><i class="fa fa-3x fa-play-circle-o"></i> </span>
+                                            <span class="time"><i class="fa fa-clock-o"></i> 30:20 </span>
+                                            <span class="pull-right views"><i class="fa fa-eye"></i> 1223 views </span>
+                                        </p>
+                                        <p class="text">Some text</p>
+                                    </a>
+                                </div>
+                                <div class="col-sm-3 col-md-2 zoom-it bottom-space">
+                                    <a class="video-play" href="video-detail.html">
+                                        <p class="img">
+                                            <img src="/anime_junkies/assets/images/cartoon2.png" class="img-responsive" alt="">
+                                            <span class="icon-play"><i class="fa fa-3x fa-play-circle-o"></i> </span>
+                                            <span class="time"><i class="fa fa-clock-o"></i> 30:20 </span>
+                                            <span class="pull-right views"><i class="fa fa-eye"></i> 1223 views </span>
+                                        </p>
+                                        <p class="text">Some text</p>
+                                    </a>
+                                </div>
+                                <div class="col-sm-3 col-md-2 zoom-it bottom-space">
+                                    <a class="video-play" href="video-detail.html">
+                                        <p class="img">
+                                            <img src="/anime_junkies/assets/images/cartoon2.png" class="img-responsive" alt="">
+                                            <span class="icon-play"><i class="fa fa-3x fa-play-circle-o"></i> </span>
+                                            <span class="time"><i class="fa fa-clock-o"></i> 30:20 </span>
+                                            <span class="pull-right views"><i class="fa fa-eye"></i> 1223 views </span>
+                                        </p>
+                                        <p class="text">Some text</p>
+                                    </a>
+                                </div>
+                                <div class="col-sm-3 col-md-2 zoom-it bottom-space">
+                                    <a class="video-play hover-text" href="video-detail.html">
+                                        <p class="img">
+                                            <img src="/anime_junkies/assets/images/cartoon2.png" class="img-responsive" alt="">
+                                            <span class="icon-play"><i class="fa fa-3x fa-play-circle-o"></i> </span>
+                                            <span class="time"><i class="fa fa-clock-o"></i> 30:20 </span>
+                                            <span class="pull-right views"><i class="fa fa-eye"></i> 1223 views </span>
+                                        </p>
+                                        <p class="text">Some text</p>
+                                    </a>
+                                </div>
+                                <div class="col-sm-3 col-md-2 zoom-it bottom-space">
+                                    <a class="video-play" href="video-detail.html">
+                                        <p class="img">
+                                            <img src="/anime_junkies/assets/images/cartoon2.png" class="img-responsive" alt="">
+                                            <span class="icon-play"><i class="fa fa-3x fa-play-circle-o"></i> </span>
+                                            <span class="time"><i class="fa fa-clock-o"></i> 30:20 </span>
+                                            <span class="pull-right views"><i class="fa fa-eye"></i> 1223 views </span>
+                                        </p>
+                                        <p class="text">Some text</p>
+                                    </a>
+                                </div>
+                                <div class="col-sm-3 col-md-2 zoom-it bottom-space">
+                                    <a class="video-play" href="video-detail.html">
+                                        <p class="img">
+                                            <img src="/anime_junkies/assets/images/cartoon2.png" class="img-responsive" alt="">
+                                            <span class="icon-play"><i class="fa fa-3x fa-play-circle-o"></i> </span>
+                                            <span class="time"><i class="fa fa-clock-o"></i> 30:20 </span>
+                                            <span class="pull-right views"><i class="fa fa-eye"></i> 1223 views </span>
+                                        </p>
+                                        <p class="text">Some text</p>
+                                    </a>
+                                </div>
+
+                            </div>
+                            <div class="col-md-12 text-center top-space bottom-space">
+                                <button class="btn btn-default btn-load">
+                                    <span><i class="fa fa-repeat"></i></span> Weitere Flgen Laden ...
+                                </button>
+
+                            </div>
+                        </div>
+                    </div>
+                    <hr width="100%">
+                    <div class="item comment-section">
+                        <p class="title top-space ng-binding"><i class="fa fa-comment-o text-danger"></i> 3 <strong>KOMMENTARE</strong></p>
+                        <div class="row bottom-space">
+                            <div class="col-md-1 col-sm-1 col-xs-12">
+                                <img src="http://vexoid.com/wp-content/uploads/2015/10/Jackie-Chan-WTF-32x32@2x.jpg" alt="">
+                            </div>
+                            <div class="col-md-11 col-sm-11 col-xs-12">
+                                <div class="comment-input">
+                                    <form ng-submit="post_comments()" class="ng-pristine ng-valid">
+                                        <textarea class="form-control ng-pristine ng-untouched ng-valid ng-empty" ng-model="commnet_data.comment_text" placeholder="Offentlichen Kommentar posten... " ng-keypress="comment_submit_function($event)"></textarea>
+
+                                        <input type="hidden" ng-model="commnet_data.parent_id" class="ng-pristine ng-untouched ng-valid ng-not-empty">
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row bottom-space">
+                            <div class="col-md-2 col-sm-2">
+                                <div class="selecter  closed" tabindex="0"><select data-selecter="" name="selecter_basic" class="selecter_1 selecter-element" tabindex="-1">
+                                    <optgroup label="Group One">
+                                        <option value="1">One</option>
+                                        <option value="2">Two</option>
+                                        <option value="3">Three</option>
+                                    </optgroup>
+                                    <optgroup label="Group One">
+                                        <option value="4">Four</option>
+                                        <option value="5">Five</option>
+                                        <option value="6">Six</option>
+                                        <option value="7">Seven</option>
+                                    </optgroup>
+                                    <optgroup label="Group Three">
+                                        <option value="8">Eight</option>
+                                        <option value="9">Nine</option>
+                                        <option value="10">Ten</option>
+                                    </optgroup>
+                                </select><span class="selecter-selected">One</span><div class="selecter-options"><span class="selecter-group">Group One</span><span class="selecter-item selected" data-value="1">One</span><span class="selecter-item" data-value="2">Two</span><span class="selecter-item" data-value="3">Three</span><span class="selecter-group">Group One</span><span class="selecter-item" data-value="4">Four</span><span class="selecter-item" data-value="5">Five</span><span class="selecter-item" data-value="6">Six</span><span class="selecter-item" data-value="7">Seven</span><span class="selecter-group">Group Three</span><span class="selecter-item" data-value="8">Eight</span><span class="selecter-item" data-value="9">Nine</span><span class="selecter-item" data-value="10">Ten</span></div></div>
+                            </div>
+                        </div>
+                        <ul class="media-list">
+                            <!-- ngRepeat: comment in comments | commentfilter | orderBy:'id':true --><!-- ngIf: comment.parent_id=='0' --><li ng-if="comment.parent_id=='0'" class="media ng-scope" ng-repeat="comment in comments | commentfilter | orderBy:'id':true">
+                            <a href="#" class="pull-left"><img src="http://vexoid.com/wp-content/uploads/2015/10/Jackie-Chan-WTF-32x32@2x.jpg" class="media-object img-rounded"></a>
+                            <div class="media-body">
+                                <h4 class="media-heading ng-binding">asdfa</h4>
+                                <p class="ng-binding">2016-09-01 16:35:26</p>
+                                <p class="ng-binding">dsadsad</p>
+
+                                <!-- Nested media object -->
+                                <!-- ngRepeat: replies in comments --><!-- ngIf: replies.parent_id>0 && replies.secondary_parent_id=='0' && comment.id==replies.parent_id --><!-- end ngRepeat: replies in comments --><!-- ngIf: replies.parent_id>0 && replies.secondary_parent_id=='0' && comment.id==replies.parent_id --><!-- end ngRepeat: replies in comments --><!-- ngIf: replies.parent_id>0 && replies.secondary_parent_id=='0' && comment.id==replies.parent_id --><!-- end ngRepeat: replies in comments -->
+                            </div>
+                        </li><!-- end ngIf: comment.parent_id=='0' --><!-- end ngRepeat: comment in comments | commentfilter | orderBy:'id':true --><!-- ngIf: comment.parent_id=='0' --><li ng-if="comment.parent_id=='0'" class="media ng-scope" ng-repeat="comment in comments | commentfilter | orderBy:'id':true">
+                            <a href="#" class="pull-left"><img src="http://vexoid.com/wp-content/uploads/2015/10/Jackie-Chan-WTF-32x32@2x.jpg" class="media-object img-rounded"></a>
+                            <div class="media-body">
+                                <h4 class="media-heading ng-binding">asdfa</h4>
+                                <p class="ng-binding">2016-09-01 16:07:58</p>
+                                <p class="ng-binding">sanaullah</p>
+
+                                <!-- Nested media object -->
+                                <!-- ngRepeat: replies in comments --><!-- ngIf: replies.parent_id>0 && replies.secondary_parent_id=='0' && comment.id==replies.parent_id --><!-- end ngRepeat: replies in comments --><!-- ngIf: replies.parent_id>0 && replies.secondary_parent_id=='0' && comment.id==replies.parent_id --><!-- end ngRepeat: replies in comments --><!-- ngIf: replies.parent_id>0 && replies.secondary_parent_id=='0' && comment.id==replies.parent_id --><!-- end ngRepeat: replies in comments -->
+                            </div>
+                        </li><!-- end ngIf: comment.parent_id=='0' --><!-- end ngRepeat: comment in comments | commentfilter | orderBy:'id':true --><!-- ngIf: comment.parent_id=='0' --><li ng-if="comment.parent_id=='0'" class="media ng-scope" ng-repeat="comment in comments | commentfilter | orderBy:'id':true">
+                            <a href="#" class="pull-left"><img src="http://vexoid.com/wp-content/uploads/2015/10/Jackie-Chan-WTF-32x32@2x.jpg" class="media-object img-rounded"></a>
+                            <div class="media-body">
+                                <h4 class="media-heading ng-binding">asdfa</h4>
+                                <p class="ng-binding">2016-09-01 16:07:51</p>
+                                <p class="ng-binding">my name is</p>
+
+                                <!-- Nested media object -->
+                                <!-- ngRepeat: replies in comments --><!-- ngIf: replies.parent_id>0 && replies.secondary_parent_id=='0' && comment.id==replies.parent_id --><!-- end ngRepeat: replies in comments --><!-- ngIf: replies.parent_id>0 && replies.secondary_parent_id=='0' && comment.id==replies.parent_id --><!-- end ngRepeat: replies in comments --><!-- ngIf: replies.parent_id>0 && replies.secondary_parent_id=='0' && comment.id==replies.parent_id --><!-- end ngRepeat: replies in comments -->
+                            </div>
+                        </li><!-- end ngIf: comment.parent_id=='0' --><!-- end ngRepeat: comment in comments | commentfilter | orderBy:'id':true -->
+
+                        </ul>
+                    </div>
+                    <hr width="100%">
+                    <div class="item text-center">
+                        <button class="btn btn-default btn-load">
+                            <span><i class="fa fa-repeat"></i></span> Weitere Flgen Laden ...
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div></div>
+
+    </div>
+</div>
+
+<footer>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-8 col-md-8 col-sm-offset-2 col-md-offset-2">
+              <span class="copy">
+                        Copyright © 2012-2016 <a href="#" class="text-muted"> <img src="/anime_junkies/assets/img/icon_animejunkies.JPG"> Anime-Junkies.tv</a>
+              </span>
+                <span class="pull-right links text-muted">
+                    <a href="#" class="text-muted">Impressum</a> | <a href="#" class="text-muted">Kontakt</a>
+              </span>
+            </div>
+        </div>
+
+    </div>
+</footer>
+
+
+<script src="/anime_junkies/assets/js/jquery.min.js"></script>
+<script src="/anime_junkies/assets/js/bootstrap.min.js"></script>
+
+<script src="http://localhost/anime_junkies/angular/angular.min.js"></script>
+<script type="text/javascript" src="http://localhost/anime_junkies/angular/ui/angular-ui-router.min.js"></script>
+<script type="text/javascript" src="http://localhost/anime_junkies/angular/other/ocLazyLoad/ocLazyLoad.min.js"></script>
+
+
+<script src="/anime_junkies/assets/plugins/owl-carousel/owl.carousel.min.js"></script>
+
+<!--
+
+<script src="<?/*= config_item('js_path'); */?>icheck.min.js"></script>
+
+-->
+<script src="/anime_junkies/assets/js/jquery.fs.selecter.min.js"></script>
+<script src="/anime_junkies/assets/js/jquery.fs.stepper.min.js"></script>
+
+<script src="http://localhost/anime_junkies/angular/other/file-upload/ng-file-upload-shim.min.js"></script>
+<script src="http://localhost/anime_junkies/angular/other/file-upload/ng-file-upload.min.js"></script>
+
+<script src="/anime_junkies/assets/js/angular/frontend/app.js"></script>
+<script type="text/javascript" src="/anime_junkies/assets/js/angular/frontend/routes/my-ui-route.js"></script>
+<script type="text/javascript" src="http://localhost/anime_junkies/angular/directives/owlcarousel.js"></script>
+<script type="text/javascript" src="http://localhost/anime_junkies/angular/directives/selecter.js"></script>
+<script type="text/javascript" src="/anime_junkies/assets/js/angular/frontend/controllers/mainController.js"></script>
+<script type="text/javascript" src="/anime_junkies/assets/js/jquery.validate.js"></script>
+<script>
+    $(document).ready( function(){
+//Login manager
+        $("#login-form-manager").validate({
+            rules: {
+                email: {
+                    required: true,
+                    email: true
+                },
+                password: {
+                    required: true
+                },
+            },
+            messages: {
+                email: {
+                    required: "Please enter email.",
+                    email: "Email is not valid."
+                },
+                password: {
+                    required: "Please enter password."
+                },
+            },
+            debug: true,
+            errorPlacement: function(error, element) {
+                var name = $(element).attr("name");
+                error.appendTo($("#" + name + "_validate"));
+            },
+            submitHandler: function(form) {
+                $.ajax({
+                    type: "POST",
+                    url: "http://localhost/anime_junkies/home/check_login",
+                    data: $("#login-form-manager").serialize(),
+                    cache: false,
+                    beforeSend: function(){ $("#logsubbutton").text('Checking...');},
+                    success: function(data) {
+                        if(data == 'active'){
+                            $('.fornotactive').hide();
+                            $('.forincorrectunpass').hide();
+                            $('.condoinactive').hide();
+                            $("#logsubbutton").html('Logging you in... <i class="m-icon-swapright m-icon-white"></i>');
+
+                            window.location.href = "http://localhost/anime_junkies/home";
+                        } else if(data == 'condo inactive'){
+                            $("#logsubbutton").html('Login <i class="m-icon-swapright m-icon-white"></i>');
+                            $('.condoinactive').show();
+                            $('.fornotactive').hide();
+                            $('.forincorrectunpass').hide();
+                        }else if(data == 'notactive'){
+                            $("#logsubbutton").html('Login <i class="m-icon-swapright m-icon-white"></i>');
+                            $('.fornotactive').show();
+                            $('.forincorrectunpass').hide();
+                            $('.condoinactive').hide();
+                        } else {
+                            $("#logsubbutton").html('Login <i class="m-icon-swapright m-icon-white"></i>');
+                            $("#password").val('');
+                            $('.forincorrectunpass').show();
+                            $('.fornotactive').hide();
+                            $('.condoinactive').hide();
+                        }
+                    },
+                    error: function() {
+                        alert('Something went wrong');
+                    }
+                });
+            }
+        });
+        $('#forgot-pass-click').click(function(){
+            $("#forgot-pass-form-manager").show();
+            $("#login-form-manager").hide();
+        });
+        $('#back-btn').click(function(){
+            $("#login-form-manager").show();
+            $("#forgot-pass-form-manager").hide();
+        });
+        $('#linksent_back').click(function(){
+            $("#login-form-manager").show();
+            $("#success-message").hide();
+        });
+        //Forgot Password
+        $("#forgot-pass-form-manager").validate({
+            rules: {
+                email_forgot: {
+                    required: true,
+                    email: true,
+                    remote: {
+                        url: "http://localhost/anime_junkies/home/check_data_exists_forgot_pass/email_forgot/users",
+                        type: "post",
+                        data: {
+                            email_forgot: function(){ return $("#email_forgot").val(); }
+                        }
+                    }
+                }
+            },
+            messages: {
+                email_forgot: {
+                    required: "Please enter Email",
+                    email: "Please enter a valid email",
+                    remote: "Seems we do not have this email address. Please check."
+                }
+            },
+            debug: true,
+
+            errorPlacement: function(error, element) {
+                var name = $(element).attr("name");
+                error.appendTo($("#" + name + "_validate"));
+            },
+
+
+
+            submitHandler: function(form) {
+                $.ajax({
+
+                    type: "POST",
+
+                    url: "http://localhost/anime_junkies/home/forgot_password",
+
+                    data: $("#forgot-pass-form-manager").serialize(),
+
+                    cache: false,
+
+                    beforeSend: function(){ $("#forgotpasssubbutton").text('Sending Link...');},
+
+                    success: function(data) {
+                        if(data == 'LINKSENT'){
+                            $("#success-message").show();
+                            $("#forgot-pass-form-manager").hide();
+                        }
+                    },
+
+
+                    error: function() {
+                        alert('Something went wrong');
+                    }
+
+                });
+
+            }
+        });
+
+        //Add Resident Form
+        $("#addresident-form").validate({
+
+            rules: {
+                name: {
+                    required: true/*,
+                     remote: {
+                     url: "http://localhost/anime_junkies/manager/check_data_exists/name/residents",
+                     type: "post",
+                     data: {
+                     name: function(){ return $("#name").val(); }
+                     }
+                     }*/
+                },
+
+                email: {
+                    required: true,
+                    remote: {
+                        url: "http://localhost/anime_junkies/home/check_data_exists/email/users",
+                        type: "post",
+                        data: {
+                            email: function(){ return $("#email").val(); }
+                        }
+                    }
+                },
+
+                password: {
+                    required: true
+                },
+
+            },
+            messages: {
+                name: {
+                    required: "Please enter Name"/*,
+                     remote: "Name Already Exist.",*/
+                },
+                email: {
+                    required: "Please enter Email",
+                    remote: "Email Already Exist.",
+                },
+                password: {
+                    required: "Please enter block",
+                },
+            },
+            debug: true,
+            errorPlacement: function(error, element) {
+                var name = $(element).attr("name");
+                error.appendTo($("#" + name + "_validate"));
+            },
+
+            submitHandler: function(form)
+            {
+                form.submit();
+                //alert('success');
+                //return false;
+            }
+        });
+    });
+</script>
+
+</body></html>

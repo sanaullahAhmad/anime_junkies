@@ -1,0 +1,63 @@
+/*!* tablet, landscape iPad, lo-res laptops ands desktops *!*/
+@media (min-width:961px) {
+    body{
+        background: #00f;
+    }
+    .hide-ipad{
+        display: none;
+    }
+    nav.navbar .navbar-header{
+        width: 35%;
+    }
+    .navbar-brand .logo img{
+        width: 100%;
+    }
+    nav.navbar .navbar-collapse{
+        margin-top: 10px;
+    }
+    nav.navbar .navbar-form{
+        display: block;
+        margin-left: 60px;
+        position: relative;
+        top: 0px;
+        width: 54%;
+    }
+	
+	
+	.top-banner-space {
+    padding-top: 34% !important;
+	}
+	.detail-header img {
+		position: relative;
+	}
+    nav.navbar .navbar-form .form-group{
+        float: right;
+    }
+    .navbar-brand .logo img{
+        width: 90%;
+        margin-left: 0;
+    }
+    .phone-left{
+        float: left !important;
+    }
+    .sort-parent{
+        position: relative;
+        top: -30px;
+    }
+    .subcategory .videos>div.col-sm-3{
+        width: 20%;
+    }
+    div.main{
+        margin-top:110px;
+    }
+    .detail-video-play .right.btn-prev, .detail-video-play .left.btn-next{
+        padding: 16.2% 6%;
+    }
+}
+
+/*
+
+
+
+@media (min-width:1025px) { !* big landscape tablets, laptops, and desktops *! }
+@media (min-width:1281px) { !* hi-res laptops and desktops *! }*/

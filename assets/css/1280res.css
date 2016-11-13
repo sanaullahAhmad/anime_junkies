@@ -1,0 +1,6 @@
+/*!* hi-res laptops and desktops *!*/
+@media (min-width:1281px) {
+    body{
+        background: #2aabd2;
+    }
+}

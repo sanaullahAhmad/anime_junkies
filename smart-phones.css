@@ -1,0 +1,164 @@
+/* smartphones, iPhone, portrait 480x320 phones */
+@media (min-width:320px) {
+  .hide-smart-phones{
+        display: none;
+    }
+
+nav .navbar-brand {
+    padding: 15px 0 0;
+}
+    nav .navbar-brand .logo img{
+        width: 100;
+		top: -9px;
+        margin-left: 0;
+        position: relative;
+
+    }
+	.comments_elements span{
+		float:left;
+    }
+	.comments_elements input[type=text]{
+		float:left;
+    }
+	.comments_elements a{
+		float:left;
+    }
+    .content-parent{
+        padding: 0;
+    }
+   .owl-item>div img{
+       width:100% ;
+   }
+    .content > div.item, .content2 > div.item, .content2 > div.bg-white > div.item{
+        padding: 0 15px;
+    }
+    .navbar-default .navbar-toggle{
+        background: #d30104;
+        color: #FFFFFF;
+        border-color: #cccccc;
+    }
+    .navbar-default .navbar-toggle .icon-bar{
+        background-color: #FFFFFF;
+    }
+    .navbar-form{
+        border:none;
+        margin: 8px 0;
+    }
+    .navbar-form input.input-search{
+        width: 100%;
+    }
+    .navbar.navbar-default .navbar-nav > li{
+        margin-left:0px;
+    }
+    .navbar.navbar-default .navbar-nav > li > a{
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    .navbar-collapse.in{
+        overflow-y: visible;
+    }
+    .navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:focus, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:focus, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > li > a:focus, .navbar-default .navbar-nav > li > a:hover{
+        background-color: #d30104;
+        border-bottom: 1px solid #d30104;
+        color: #fff;
+    }
+    .dropdown.login .dropdown-menu{
+        background: #434a54 none repeat scroll 0 0;
+        margin-left: -157px;
+        position: absolute;
+        min-width: 306px;
+    }
+    .dropdown.login .dropdown-menu::before{
+        right: 75px;
+        top: -10px;
+    }
+    .navbar-default .navbar-nav.navbar-right > .open > a, .navbar-default .navbar-nav.navbar-right > .open > a:focus{
+        color: #d30104;
+        background: #FFFFFF;
+    }
+    .navbar ul.nav li a{
+        border-bottom: 1px solid #dfdfdf ;
+    }
+    .navbar ul.nav.navbar-right>li{
+        display: inline-block;
+        float: right;
+        padding: 0 15px;
+    }
+    .navbar ul.nav.navbar-right  li a{
+        border:none;
+    }
+    .videos img{
+        width: 100%;
+    }
+    .phone-left{
+        float: left !important;
+    }
+    .phone-text-left{
+        text-align: left;
+    }
+    .video-name-lg{
+        margin-bottom: 0;
+    }
+    .video-name-lg .title{
+        font-size: 22px;
+    }
+    .overlay-toggle .top-space50 {
+        float: left !important;
+        margin-top: 0;
+    }
+    .registration-form .logo img{
+        width: 100%;
+    }
+    .registration-instruction{
+        margin-left:0;
+        margin-top: 30px;
+    }
+    .detail-video-play .right.btn-prev, .detail-video-play .left.btn-next{
+        padding: 0 !important;
+        font-size: 2em;
+    }
+    .detail-video-play .right.btn-prev{
+        background: #fff;
+        position: absolute;
+        right: 10%;
+        top: -25%;
+        width: 40px;
+}
+    .detail-video-play .left.btn-next{
+        background: #fff;
+    position: absolute;
+    right: 10px;
+    top: -25%;
+    width: 40px;
+}
+    footer{
+        text-align: center;
+    }
+    footer .links.pull-right{
+        float: none !important;
+        position: relative;
+        top: 10px;
+        display: block;
+    }
+    .zoom-it:hover{
+        margin-bottom: 30px;
+    }
+    .video-play .icon-play{
+        bottom: 50%;
+        left: 42%;
+    }
+    .video-play .time,.video-play .views{
+        bottom: 35px;
+        font-size: 14px;
+    }
+
+    .navbar-fixed-bottom, .navbar-fixed-top{
+        position: relative;
+    }
+    nav.navbar{
+        margin-bottom: 0;
+    }
+    div.main{
+        margin-top: -5px;
+    }
+}

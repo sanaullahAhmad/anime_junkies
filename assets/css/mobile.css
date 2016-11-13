@@ -1,0 +1,190 @@
+/* Mobile Phones */
+@media all and (max-width: 319px) and (min-width: 120px) {
+    .hide-mobile{
+        display: none;
+    }
+
+    nav .navbar-brand {
+        padding: 0;
+        position: relative;
+        top: 16px;
+        width: 80%;
+      }
+    nav .navbar-brand .logo img{
+        margin-left: 0;
+        width: 70%;
+    }
+	.details-single .detail-header.top-banner-space {
+    padding-top: 80% !important;
+	}
+	.detail-header img {
+		position: relative;
+	}
+    .content-parent{
+        padding: 0;
+    }
+    .navbar-toggle .icon-bar{
+        height: 1px;
+        width: 14px;
+    }
+    .owl-item>div img{
+        width:100% ;
+    }
+    .content > div.item, .content2 > div.item, .content2 > div.bg-white > div.item{
+        padding: 0 15px;
+    }
+    .navbar-brand{
+        height:30px;
+    }
+    .navbar-default .navbar-toggle{
+        background: #d30104;
+        color: #FFFFFF;
+        border-color: #cccccc;
+        margin: 0;
+        padding: 5px;
+        position: relative;
+        top: 15px;
+    }
+    .navbar-default .navbar-toggle .icon-bar{
+        background-color: #FFFFFF;
+    }
+    .navbar-form{
+        border:none;
+        margin: 8px 0;
+    }
+    .navbar-form input.input-search{
+        width: 100%;
+    }
+    .navbar.navbar-default .navbar-nav > li{
+        margin-left:0px;
+    }
+    .navbar.navbar-default .navbar-nav > li > a{
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    .navbar-collapse.in{
+        overflow-y: visible;
+    }
+    .navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:focus, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:focus, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > li > a:focus, .navbar-default .navbar-nav > li > a:hover{
+        background-color: #d30104;
+        border-bottom: 1px solid #d30104;
+        color: #fff;
+    }
+    .dropdown.login .dropdown-menu{
+        background: #434a54 none repeat scroll 0 0;
+        margin-left: -120px;
+        position: absolute;
+        min-width: 220px;
+    }
+    .dropdown.login .dropdown-menu::before{
+        right: 42px;
+        top: -10px;
+    }
+    .navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:focus, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:focus, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > li > a:focus, .navbar-default .navbar-nav > li > a:hover{
+        background: #d30104 ;
+    }
+    .dropdown.login .dropdown-menu li.divider{
+        margin: 26px 0;
+    }
+    .dropdown.login .dropdown-menu li.divider span{
+        padding: 0 20px;
+        bottom: 136px;
+    }
+    .dropdown.login .dropdown-menu li:last-child{
+        text-align: center;
+    }
+    .dropdown.login .dropdown-menu li:last-child span{
+        display: list-item;
+    }
+    .navbar-default .navbar-nav.navbar-right > .open > a, .navbar-default .navbar-nav.navbar-right > .open > a:focus{
+        color: #d30104;
+        background: #FFFFFF;
+    }
+    .navbar ul.nav li a{
+        border-bottom: 1px solid #dfdfdf ;
+    }
+    .navbar ul.nav.navbar-right>li{
+        display: inline-block;
+        float: right;
+        padding: 0;
+    }
+    .navbar ul.nav.navbar-right  li a{
+        border:none;
+    }
+    .phone-left{
+        float: left !important;
+    }
+    .phone-text-left{
+        text-align: left;
+    }
+    .video-name-lg{
+        margin-bottom: 0;
+    }
+    .video-name-lg .title{
+        font-size: 22px;
+    }
+    .overlay-toggle .top-space50 {
+        float: left !important;
+        margin-top: 0;
+    }
+    .videos img{
+        width: 100%;
+    }
+    .registration-form .logo img{
+        width: 100%;
+    }
+    .registration-instruction{
+        margin-left:0;
+        margin-top: 30px;
+    }
+    .detail-video-play .right.btn-prev, .detail-video-play .left.btn-next{
+        padding: 0 !important;
+        font-size: 1.5em;
+    }
+    .detail-video-play .right.btn-prev{
+        background: #fff;
+        position: absolute;
+        right: 10%;
+        top: -25%;
+        width: 40px;
+    }
+    .detail-video-play .left.btn-next{
+        background: #fff;
+        position: absolute;
+        right: 10px;
+        top: -25%;
+        width: 30px;
+    }
+    .navbar-default .navbar-nav.navbar-right{
+        margin:0 10px 0 0;
+    }
+
+
+    footer{
+        text-align: center;
+    }
+    footer .links.pull-right {
+        float: none !important;
+        position: relative;
+        top: 10px;
+        display: block;
+    }
+    footer > div{
+        height: 150px;
+    }
+
+
+    .zoom-it:hover{
+        margin-bottom: 30px;
+    }
+    .video-play .icon-play{
+        bottom: 50%;
+        left: 42%;
+    }
+    .video-play .time,.video-play .views{
+        bottom: 35px;
+        font-size: 14px;
+    }
+
+
+}

@@ -1,0 +1,58 @@
+/*==============================*/
+/* default styling  */
+/*==============================*/
+.navbar-brand .logo img{
+  max-height: 36.57px !important;
+  /*width: auto !important;*/
+}
+
+
+/*==============================*/
+/* min width size */
+/*==============================*/
+@media only screen and (min-width : 1050px) {nav.navbar .navbar-form{width: auto;}}
+@media only screen and (min-width : 1025px) {
+  nav.navbar .navbar-header{   
+    /*width: auto;*/
+    max-width: 220px;
+    padding-right: 0px;
+  }
+  nav.navbar .navbar-form{width: auto;}
+}
+@media only screen and (min-width : 641px) {nav.navbar .navbar-form{width: auto;}}
+
+
+
+/*==============================*/
+/* max width sizes */
+/*==============================*/
+/*Custom Devices */
+@media only screen and (max-width : 1350px) {
+  .navbar-form input.input-search{width: 250px;}
+}
+@media only screen and (max-width : 1250px) {
+  .navbar-form input.input-search{width: 150px;}
+}
+
+/* Large Devices, Wide Screens */
+@media only screen and (max-width : 1200px) {
+
+}
+@media only screen and (max-width : 1110px) {
+
+}
+@media only screen and (max-width : 1103px) {
+  .navbar.navbar-default .navbar-nav>li>a{  font-size: 1.3vw;}
+}
+/* Medium Devices, Desktops */
+@media only screen and (max-width : 992px) {
+
+}
+/* Small Devices, Tablets */
+@media only screen and (max-width : 768px) {
+
+}
+/* Extra Small Devices, Phones */ 
+@media only screen and (max-width : 480px) {
+
+}
